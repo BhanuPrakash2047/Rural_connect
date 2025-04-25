@@ -1,0 +1,54 @@
+spring:
+  cloud:
+    gateway:
+      default-filters: [ ]
+      routes:
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+        - id: register-rout
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/register/**
+        - id: civic-development
+          uri: lb://CIVICDEVELOPMENT-GAMMA
+          predicates:
+            - Path=/civic/**
+          filters:
+            - JwtAuthenticationFilter
+        - id: government-schemes
+          uri: lb://GOVERNMENTSCHEMES-GAMMA
+          predicates:
+            - Path=/api/schemes/**
+          filters:
+            - JwtAuthenticationFilter
+        - id: job-portal
+          uri: lb://JOBPORTAL-GAMMA
+          predicates:
+            - Path=/api/jobs/**
+          filters:
+            - JwtAuthenticationFilter
+        - id: job-notifications
+          uri: lb://JOBPORTAL-GAMMA
+          predicates:
+            - Path=/api/notifications/**
+          filters:
+            - JwtAuthenticationFilter
+        - id: Agri-trade
+          uri: lb://MARKETANDTRADEPRODUCER
+          predicates:
+            - Path=/trade/**
+          filters:
+            - JwtAuthenticationFilter
+        - id: Agri-trade-2
+          uri: lb://MARKETANDTRADECONSUMER
+          predicates:
+            - Path=/trade1/**
+          filters:
+            - JwtAuthenticationFilter
+
+
+server:
+  port: 8081
+
