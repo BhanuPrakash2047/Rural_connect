@@ -1,0 +1,11 @@
+com\example\apigatewayauth\configurations\JwtUtil.class
+com\example\apigatewayauth\modal\AuthRequest.class
+com\example\apigatewayauth\AuthController.class
+com\example\apigatewayauth\services\JwtService.class
+com\example\apigatewayauth\services\MyUserDetails.class
+com\example\apigatewayauth\Repo.class
+com\example\apigatewayauth\configurations\JwtAuthenticationFilter.class
+com\example\apigatewayauth\modal\PersonDetails.class
+com\example\apigatewayauth\ApiGatewayAuthApplication.class
+com\example\apigatewayauth\configurations\SecurityConfig.class
+com\example\apigatewayauth\services\MyUserDetailsService.class
